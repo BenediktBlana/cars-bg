@@ -1,0 +1,23 @@
+{
+    "name": "Python Wallpaper Downloader",
+    "dockerFile": "Dockerfile",
+    "context": "..", // Sets the build context to the project root
+    // Customizations for VSCode
+    "settings": {
+        "python.pythonPath": "/usr/local/bin/python"
+    },
+    // Mount the source code into the container
+    "workspaceFolder": "/workspace",
+    // Extensions to install in the container
+    "extensions": [
+        "ms-python.python"
+    ],
+    // Forward ports
+    "forwardPorts": [
+        5678
+    ],
+    // Run these commands after the container starts
+    "postCreateCommand": "pip install -r requirements.txt",
+    // Default terminal command
+    "remoteUser": "root"
+}
